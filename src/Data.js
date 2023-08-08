@@ -1,0 +1,21 @@
+export const soundList = [
+    'birthdayDinner',
+    'dontSayThat',
+    'evenTheDoctors',
+    'michaelNo',
+    'myOpinion',
+    'shesASlut',
+    'sluttingItUp',
+    'amateurs',
+    'urFine',
+    'oof',
+    'seamlessness',
+    'shutUpHannah',
+    'sketchy',
+    'foulWater',
+    'alwaysSaidThat',
+    'hateritis',
+    'dyingKim',
+    'amazingSweetie',
+    'lightWorkNoReaction'
+]
