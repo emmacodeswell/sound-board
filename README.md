@@ -1,6 +1,11 @@
-# React + Vite
+# Custom Meme Soundboard
+Ever wanted to make your own meme soundboard? Look no further. This project was made using only the finest meme sounds available on the internet. ( ͡° ͜ʖ ͡°) Enjoy.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- Fonts are from Google Fonts
+- SVGs are from DEVICON
+- This project uses Firebase integration
+
+# This Project Was Made Using React + Vite
 
 Currently, two official plugins are available:
 
