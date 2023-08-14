@@ -18,4 +18,6 @@ const SoundContainer = () => {
     )
 }
 
+export default SoundContainer
+
 // heavily referenced from Shang's react-drum-kit-starter lesson
