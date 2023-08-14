@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react'
 import firebase from './firebase';
 import { getDatabase, ref, onValue } from 'firebase/database'
+import SoundCube from './components/SoundCube';
+import SoundContainer from './components/SoundContainer';
 import './App.css'
 
 // This is a highly specific (to me) sound board
