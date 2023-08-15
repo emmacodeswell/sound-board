@@ -16,7 +16,11 @@ import './App.css'
 // Pseudo code
 // Create a json file that holds ALL possible sounds with MP3 or MP4 file
 // Import json file into firebase
-//  
+
+// Global Variables
+const database = getDatabase(firebase)
+const dbRef = ref(database)
+const userSoundsRef = ref(database, '/userSounds')
 
 function App() {
   const [count, setCount] = useState(0)
