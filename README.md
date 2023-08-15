@@ -1,8 +1,7 @@
 # Custom Meme Soundboard
-Ever wanted to make your own meme soundboard? Look no further. This project was made using only the finest meme sounds available on the internet. ( ͡° ͜ʖ ͡°) Enjoy.
+My personal collection of the finest meme sounds available on the internet. ( ͡° ͜ʖ ͡°) Enjoy.
 
 - Fonts are from Google Fonts
-- SVGs are from DEVICON
 - This project uses Firebase integration
 
 # This Project Was Made Using React + Vite
