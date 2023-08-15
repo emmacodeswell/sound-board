@@ -1,18 +1,36 @@
+import { useRef } from 'react';
 import SoundCube from "./SoundCube";
 import { soundList } from "./data";
 
-const SoundContainer = () => {
+const SoundContainer = ({onToggleSound, name}) => {
+
+    const fieldset = useRef(null)
+
+    const handleChange = (event) => {
+        const inputs = Array.from(fieldset.current.elements)
+        const selectedValues = inputs
+            .filter(input => input.checked)
+            .map(input => input.name)
+        onToggleSound(selectedValues)
+    }
+
     return (
         <div className="wrapper">
             <section className="keyboard">
-                {/* Sounds will go here */}
-                {
-                    soundList.map((soundName, index) => {
-                        return <SoundCube 
-                            key={index}
-                            name={soundName}/>
-                    })
-                }
+                <fieldset 
+                    ref={fieldset} 
+                    name={name} 
+                    onChange={handleChange}>
+                    {/* Sounds will go here */}
+                    {
+                        soundList.map((soundName, index) => {
+                            return <SoundCube 
+                                key={index}
+                                name={soundName}
+                                />
+                        })
+                    }
+                </fieldset>
             </section>
         </div>
     )

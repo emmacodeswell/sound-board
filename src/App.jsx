@@ -26,36 +26,22 @@ function App() {
   const [count, setCount] = useState(0)
   const [userSounds, setUserSounds] = useState([])
 
-  useEffect(() => {
-    const database = getDatabase(firebase)
-    const dbRef = ref(database)
-
-  }, [])
-
   return (
     <div className='soundBoard'>
-      <SoundContainer />
+      <SoundContainer
+      onToggleSound={handleToggleSound} 
+      name='userSounds'/>
+
       <button onClick={handleSubmit}>Create Soundboard!</button>
-      {/* If button = checked handleAddSound, if unchecked handleRemoveSound */}
     </div>
   )
 }
 
-const handleAddSound = (event) => {
-  event.preventDefault()
-
-  const database = getDatabase(firebase)
-  const dbRef = ref(database)
-  push(dbRef, userSounds)
-  setUserSounds([])
-}
-
-const handleRemoveSound = (soundId) => {
-  // Connect to database
-  const database = getDatabase(firebase)
-  const dbRef = ref(database, `/${soundId}`)
-
-  remove(dbRef)
+const handleToggleSound = (selectedValues) => {
+  console.log(selectedValues)
+  
+  set(userSoundsRef, selectedValues)
+  // TODO: use push() to generate unique keys for each user 
 }
 
 const handleSubmit = (event) => {

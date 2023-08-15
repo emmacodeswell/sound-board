@@ -1,4 +1,4 @@
-const SoundCube = ({name, theme}) => {
+const SoundCube = ({name, theme, onChange}) => {
     const soundUrl = `./assets/${name}.mp3`
 
     const handleCubeClick = () => {
@@ -6,9 +6,15 @@ const SoundCube = ({name, theme}) => {
     }
 
     return (
-        <div className={`key ${theme}`} onClick={handleCubeClick}>
-            <span className={`sound ${theme}`}>{name}</span>
-        </div>
+        <>
+            <div className={`key ${theme}`} onClick={handleCubeClick}>
+            <input 
+                type="checkbox" 
+                onChange={onChange} 
+                name={name}/>
+                <span className={`sound ${theme}`}>{name}</span>
+            </div>
+        </>
     )
 }
 
