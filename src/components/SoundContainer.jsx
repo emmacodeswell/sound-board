@@ -4,7 +4,7 @@ import { soundList } from "./data";
 const SoundContainer = () => {
     return (
         <div className="wrapper">
-            <section className="selection">
+            <section className="keyboard">
                 {/* Sounds will go here */}
                 {
                     soundList.map((soundName, index) => {
