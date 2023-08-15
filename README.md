@@ -1,5 +1,6 @@
 # Custom Meme Soundboard
-My personal collection of the finest meme sounds available on the internet. ( ͡° ͜ʖ ͡°) Enjoy.
+A curated collection of my favourite meme sounds on the internet. It will grow. 
+( ͡° ͜ʖ ͡°) Pls enjoy.
 
 - Fonts are from Google Fonts
 - This project uses Firebase integration
