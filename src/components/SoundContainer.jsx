@@ -2,7 +2,7 @@ import { useRef } from 'react';
 import SoundCube from "./SoundCube";
 import { soundList } from "./data";
 
-const SoundContainer = ({onToggleSound, name}) => {
+const SoundContainer = ({onToggleSound, name, value}) => {
 
     const fieldset = useRef(null)
 
@@ -27,6 +27,7 @@ const SoundContainer = ({onToggleSound, name}) => {
                             return <SoundCube 
                                 key={index}
                                 name={soundName}
+                                defaultChecked={Boolean(value.find(v => v === soundName))}
                                 />
                         })
                     }

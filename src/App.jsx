@@ -24,13 +24,19 @@ const userSoundsRef = ref(database, '/userSounds')
 
 function App() {
   const [count, setCount] = useState(0)
-  const [userSounds, setUserSounds] = useState([])
+  const [userSounds, setUserSounds] = useState(null)
+  
+  useEffect(() => {
+    const promise = get(userSoundsRef)
+    promise.then(data => setUserSounds(data.val()))
+  }, [])
 
   return (
     <div className='soundBoard'>
-      <SoundContainer
+      {!userSounds ? null : <SoundContainer
       onToggleSound={handleToggleSound} 
-      name='userSounds'/>
+      name='userSounds'
+      value={userSounds}/>}
 
       <button onClick={handleSubmit}>Create Soundboard!</button>
     </div>

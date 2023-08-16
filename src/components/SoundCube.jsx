@@ -1,4 +1,4 @@
-const SoundCube = ({name, theme, onChange}) => {
+const SoundCube = ({name, theme, onChange, defaultChecked}) => {
     const soundUrl = `./assets/${name}.mp3`
 
     const handleCubeClick = () => {
@@ -11,7 +11,8 @@ const SoundCube = ({name, theme, onChange}) => {
             <input 
                 type="checkbox" 
                 onChange={onChange} 
-                name={name}/>
+                name={name}
+                defaultChecked={defaultChecked}/>
                 <span className={`sound ${theme}`}>{name}</span>
             </div>
         </>
