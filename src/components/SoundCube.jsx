@@ -6,14 +6,14 @@ const SoundCube = ({name, theme, onChange, defaultChecked}) => {
     }
 
     return (
-        <div className={`key ${theme}`} onClick={handleCubeClick}>
+        <div className={`key ${theme}`}>
             <input 
                 type="checkbox" 
                 onChange={onChange} 
                 name={name}
                 defaultChecked={defaultChecked}
             />
-            <span className={`sound ${theme}`}>{name}</span>
+            <span className={`sound ${theme}`} onClick={handleCubeClick}>{name}</span>
         </div>
     )
 }
