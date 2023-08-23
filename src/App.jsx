@@ -20,7 +20,18 @@ import './App.css'
 // Global Variables
 const database = getDatabase(firebase)
 const dbRef = ref(database)
-const userSoundsRef = ref(database, '/userSounds')
+const allUserSoundsRef = ref(database, `/userSounds`)
+
+// guid = globally unique identifier
+let guid = localStorage.getItem('guid')
+let userSoundsRef
+
+if (guid) {
+  userSoundsRef = child(allUserSoundsRef, guid)
+} else {
+  userSoundsRef = push(allUserSoundsRef)
+  localStorage.setItem('guid', userSoundsRef.key)
+}
 
 function App() {
   const [count, setCount] = useState(0)
@@ -28,7 +39,7 @@ function App() {
   
   useEffect(() => {
     const promise = get(userSoundsRef)
-    promise.then(data => setUserSounds(data.val()))
+    promise.then(data => setUserSounds(data.val() || []))
   }, [])
 
   return (
