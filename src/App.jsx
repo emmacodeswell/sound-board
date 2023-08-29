@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
+import { createBrowserRouter, useNavigate, RouterProvider, Routes, Route } from 'react-router-dom'
 import firebase from './firebase';
-import { getDatabase, ref, child, onValue, set, get, push } from 'firebase/database'
+import { getDatabase, ref, child, onValue, set, push } from 'firebase/database'
+import Header from './components/Header'
 import SoundCube from './components/SoundCube';
 import SoundContainer from './components/SoundContainer';
 import './App.css'
+import SoundBoard from './components/SoundBoard';
 
 // This is a highly specific (to me) sound board
 // The basic premise of this sound board is to create a 9 panel soundboard with sounds that can play from it
@@ -33,25 +36,58 @@ if (guid) {
   localStorage.setItem('guid', userSoundsRef.key)
 }
 
+function AppRouter() {
+  const router = createBrowserRouter([ 
+    {
+      path: '*',
+      element: <App />
+    }
+  ])
+
+  return (
+    <RouterProvider router={router} />
+  )
+}
+
 function App() {
   const [count, setCount] = useState(0)
   const [userSounds, setUserSounds] = useState(null)
-  
+  const navigate = useNavigate()
+
   useEffect(() => {
-    const promise = get(userSoundsRef)
-    promise.then(data => setUserSounds(data.val() || []))
+    const updateUserSounds = data => setUserSounds(data.val() || [])
+    onValue(userSoundsRef, updateUserSounds)
   }, [])
 
-  return (
-    <div className='soundBoard'>
-      {!userSounds ? null : <SoundContainer
-      onToggleSound={handleToggleSound} 
-      name='userSounds'
-      value={userSounds}/>}
+  const handleSubmit = (event) => {
+    event.preventDefault()
+    navigate("/view")
+  }
 
-      <button onClick={handleSubmit}>Create Soundboard!</button>
+  return <>
+    <div className="hero">
+      <Header />
+      <div className="top">
+        <span className="dot"></span>
+      </div>
+      <Routes>
+        <Route path="/" element={
+          <div className='soundBoard'>
+            {!userSounds ? null : <SoundContainer
+            onToggleSound={handleToggleSound} 
+            name='userSounds'
+            value={userSounds}/>}
+
+            <button onClick={handleSubmit}>Create Soundboard!</button>
+          </div>
+        }/>
+        <Route path="/view" element={
+          !userSounds ? null : <SoundBoard sounds={userSounds}/>
+        }/>
+      </Routes>
     </div>
-  )
+  </>
+
 }
 
 const handleToggleSound = (selectedValues) => {
@@ -61,8 +97,4 @@ const handleToggleSound = (selectedValues) => {
   // TODO: use push() to generate unique keys for each user 
 }
 
-const handleSubmit = (event) => {
-  
-}
-
-export default App
+export default AppRouter

@@ -15,25 +15,23 @@ const SoundContainer = ({onToggleSound, name, value}) => {
     }
 
     return (
-        <div className="wrapper">
-            <section className="keyboard">
-                <fieldset 
-                    ref={fieldset} 
-                    name={name} 
-                    onChange={handleChange}>
-                    {/* Sounds will go here */}
-                    {
-                        soundList.map((soundName, index) => {
-                            return <SoundCube 
-                                key={index}
-                                name={soundName}
-                                defaultChecked={Boolean(value.find(v => v === soundName))}
-                                />
-                        })
-                    }
-                </fieldset>
-            </section>
-        </div>
+        <section className="keyboard">
+            <fieldset 
+                ref={fieldset} 
+                name={name} 
+                onChange={handleChange}>
+                {/* Sounds will go here */}
+                {
+                    soundList.map(soundName => {
+                        return <SoundCube 
+                            key={soundName}
+                            name={soundName}
+                            defaultChecked={Boolean(value.find(v => v === soundName))}
+                        />
+                    })
+                }
+            </fieldset>
+        </section>
     )
 }
 

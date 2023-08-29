@@ -1,8 +1,9 @@
+import playSound from "../uwu/playSound"
+
 const SoundCube = ({name, theme, onChange, defaultChecked}) => {
-    const soundUrl = `./assets/${name}.mp3`
 
     const handleCubeClick = () => {
-        new Audio(soundUrl).play()
+        playSound(name)
     }
 
     return (
