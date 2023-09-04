@@ -2,7 +2,7 @@ export const soundList = [
     'amateurs',
     'tati-birthday-dinner',
     'croissant',
-    'aria-dont-say-shat',
+    'aria-dont-say-that',
     'girl-dinner',
     'mic-hateritis',
     'kylie-is-that-a-chicken',
