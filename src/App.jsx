@@ -65,24 +65,29 @@ function App() {
   }
 
   return <>
-    <div className="hero">
-      <Header />
-      <div className="top">
-        <span className="dot"></span>
-      </div>
+    <div className='soundBoard'> 
       <Routes>
         <Route path="/" element={
-          <div className='soundBoard'>
-            {!userSounds ? null : <SoundContainer
-            onToggleSound={handleToggleSound} 
-            name='userSounds'
-            value={userSounds}/>}
-
-            <button onClick={handleSubmit}>Create Soundboard!</button>
-          </div>
+          <>
+            {!userSounds ? null : (
+              <SoundContainer
+                onToggleSound={handleToggleSound} 
+                name='userSounds'
+                value={userSounds}
+              >
+              </SoundContainer>
+            )}
+            <Link className='button' to='/view' type='submit'>Create Soundboard!</Link>
+          </>
         }/>
         <Route path="/view" element={
-          !userSounds ? null : <SoundBoard sounds={userSounds}/>
+          <>
+            {!userSounds ? null : (
+              <SoundBoard sounds={userSounds}>
+              </SoundBoard>
+            )}
+            <Link className='button' to='/'>Go back</Link>
+          </>
         }/>
       </Routes>
     </div>
