@@ -4,7 +4,7 @@ import firebase from './firebase';
 import { getDatabase, ref, child, onValue, set, push } from 'firebase/database'
 import Header from './components/Header'
 import SoundContainer from './components/SoundContainer';
-import './App.css'
+import './App.scss'
 import SoundBoard from './components/SoundBoard';
 import SparkleIcon from './components/SparkleIcon';
 

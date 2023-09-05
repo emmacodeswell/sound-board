@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { getSound } from '../uwu/playSound'
 import PlayIcon from './PlayIcon'
 import StopIcon from './StopIcon'
-import './SoundCube.css'
+import './SoundCube.scss'
 
 const SoundCube = ({name, theme, defaultChecked}) => {
 

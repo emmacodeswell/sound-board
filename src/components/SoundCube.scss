@@ -1,3 +1,7 @@
+@use '../styles/partials/variables' as *;
+@use '../styles/partials/mixins' as *;
+
+
 .key {
     text-align: center;
     position: relative;
@@ -8,7 +12,7 @@
 }
 
 .key .sound {
-    color: #723B39;
+    color: $brown;
     font-weight: 600;
     line-height: 1;
     width: 130px;
@@ -17,30 +21,30 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    border: #F2C91F 3px solid;
+    border: $yellow 3px solid;
     border-radius: 1.5rem;
     transition: all .06s ease-out, background .2s ease-in-out;
     cursor: pointer;
-    box-shadow: 5px 5px 0px 0px #bb5834, 10px 10px 0px 0px #723B39, 5px 5px 15px 5px rgba(0,0,0,0);
+    box-shadow: 5px 5px 0px 0px $tangerine, 10px 10px 0px 0px $brown, 5px 5px 15px 5px rgba(0,0,0,0);
     position: relative;
     top: 0;
     left: 0;
 }
 
 .key button.sound:active {
-    box-shadow: 1px 1px 0px 0px #bb5834, 2px 2px 0px 0px #723B39, 1px 1px 3px 1px rgba(0,0,0,0);
+    box-shadow: 1px 1px 0px 0px $tangerine, 2px 2px 0px 0px $brown, 1px 1px 3px 1px rgba(0,0,0,0);
     left: 8px;
     top: 8px;
 }
 
 .key input:checked + .sound,
 .key button.sound {
-    background-color: #F2C91F;
+    background-color: $yellow;
 }
 
 .key .togglePlay {
     appearance: none;
-    color: white;
+    color: $white;
     background-color: transparent;
     border: none;
     padding: 0;
@@ -53,10 +57,10 @@
     height: 1em;
     width: 1em;
     margin: 0 auto;
-    transition: all .2s ease-in-out;
+    transition: $easeInOut;
 }
 
 .key .togglePlay:hover,
 .key button.sound:hover .togglePlay {
-    filter: drop-shadow(0 0 5px #fff);
+    filter: drop-shadow(0 0 5px $white);
 }

@@ -1,3 +1,7 @@
+@use './styles/partials/mixins' as *;
+@use './styles/partials/setup';
+@use './styles/partials/variables' as *;
+
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
 
 /* 'Hellowin' fonts from FFonts: https://www.ffonts.net */
@@ -44,23 +48,33 @@ h1, h2 {
 }
 
 h1 {
-    color: #723B39;
+    color: $brown;
     font-size: 5.5rem;
-    margin: 1rem;
-    text-shadow: 3px 3px 0 #DE7E44, 6px 6px 0 #F2C91F, 9px 9px 0 #6f6dad;
+    margin: 1rem 0;
+    text-shadow: 3px 3px 0 $orange, 6px 6px 0 $yellow, 9px 9px 0 $periwinkle;
     text-align: center;
     line-height: 1;
 
+    @include mobile {
+        font-size: 3rem;
+        margin: 2rem 0;
+    }
 }
 
 h1 span {
-    color: #723B39;
+    color: $brown;
     text-shadow: none;
+}
+
+h2 {
+    color: $brown;
+    text-align: center;
+    grid-column: span 4;
 }
 
 p {
     font-size: 1rem;
-    color: #723B39;
+    color: $brown;
 }
 
 .soundBoard {
@@ -74,11 +88,11 @@ form {
 .button {
     display: inline-block;
     text-decoration: none;
-    color: white;
+    color: $white;
     font-size: 1.5rem;
     font-family: 'Hellowin';
     text-transform: lowercase;
-    background-color: #6f6dad;
+    background-color: $periwinkle;
     border-radius: 1.5rem;
     padding: 25px 50px;
     margin: 1.5rem;
@@ -87,21 +101,30 @@ form {
     border: none;
     cursor: pointer;
     transition: all .2s ease-in-out;
+
+    @include mobile {
+        margin: 2rem 0;
+    }
 }
 
 .button:hover {
-    background-color: #333A56;
-    text-shadow: 0 0 5px #fff;
+    background-color: $navy;
+    text-shadow: 0 0 5px $white;
 }
 
 .button:active {
-    background-color: #aab1d4;
+    background-color: $lightBlue;
 }
 
 .wrapper {
     width: 720px;
     margin: 0 auto;
     position: relative;
+
+    @include mobile {
+        width: 100%;
+        padding: 0;
+    }
   }
 
 .keyboard fieldset {
@@ -110,16 +133,22 @@ form {
     grid-row-gap: 25px;
     justify-items: center;
     border: none;
-    background-color: #DE7E44;
+    background-color: $orange;
     border: none;
     border-radius: 3rem;
     padding: 3rem;
+
+    @include mobile {
+        grid-template-columns: 1fr 1fr;
+        padding: 3rem 1rem;
+        border-radius: 0;
+    }
   }
 
 .instructions {
     text-align: center;
     font-size: 1rem;
-    color: #723B39;
+    color: $brown;
 }
 
 .sparkle {
@@ -128,10 +157,14 @@ form {
     height: 10rem;
     width: 5rem;
     z-index: 100;
-    fill: #fff;
+    fill: $white;
     animation: glint 1s ease-in infinite alternate;
     pointer-events: none;
     filter: drop-shadow(0 0 12px #fdd);
+
+    @include mobile {
+        display: none;
+    }
 }
 
 .sparkle.top {
