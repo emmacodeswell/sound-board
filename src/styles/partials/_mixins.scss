@@ -1,0 +1,24 @@
+@use "./variables" as *;
+
+// Media queries mixins
+
+// Desktop only
+@mixin desktop {
+    @media (min-width: $desktop) {
+        @content;
+    }
+}
+
+// Anything smaller than desktop
+@mixin tablet {
+    @media (max-width: ($desktop - 1px)) {
+        @content;
+    }
+}
+
+// Anythng smaller than tablet
+@mixin mobile {
+    @media (max-width: ($tablet - 1px)) {
+        @content;
+    }
+}
