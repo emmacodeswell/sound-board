@@ -1,17 +1,22 @@
 import playSound from "../uwu/playSound";
+import SoundCube from "./SoundCube";
 
-const SoundBoard = ({sounds}) => {
+const SoundBoard = ({sounds, children}) => {
 
     return (
 
         <>
-            <section>
-                { 
-                    sounds.map(soundName => (
-                        <button key={soundName} onClick={() => playSound(soundName)}>{soundName}</button>
-                    )) 
-                }
-            </section>
+            <div className="wrapper">
+                {children}
+                <section className="keyboard">
+                    <fieldset>
+                        { 
+                            sounds.map(soundName => <SoundCube name={soundName}/>)
+                        }
+                    </fieldset>
+                </section>
+
+            </div>
         </>
 
     );
