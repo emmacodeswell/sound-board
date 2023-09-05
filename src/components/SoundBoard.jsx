@@ -1,4 +1,3 @@
-import playSound from "../uwu/playSound";
 import SoundCube from "./SoundCube";
 
 const SoundBoard = ({sounds, children}) => {
@@ -10,12 +9,13 @@ const SoundBoard = ({sounds, children}) => {
                 {children}
                 <section className="keyboard">
                     <fieldset>
-                        { 
+                        { sounds.length ? (
                             sounds.map(soundName => <SoundCube name={soundName}/>)
-                        }
+                        ) : <>
+                            <h2>Why no sounds? :c</h2>
+                        </>}
                     </fieldset>
                 </section>
-
             </div>
         </>
 
