@@ -3,6 +3,7 @@ export const soundList = [
     'tati-birthday-dinner',
     'croissant',
     'aria-dont-say-that',
+    'bruh',
     'girl-dinner',
     'mic-hateritis',
     'kylie-is-that-a-chicken',
@@ -12,5 +13,6 @@ export const soundList = [
     'my-opinion',
     'theres-people-that-are-dying',
     'ur-fine',
+    'vine-boom',
     'youre-doing-amazing-sweetie',
 ]
