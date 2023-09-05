@@ -7,18 +7,7 @@ import SoundCube from './components/SoundCube';
 import SoundContainer from './components/SoundContainer';
 import './App.css'
 import SoundBoard from './components/SoundBoard';
-
-// This is a highly specific (to me) sound board
-// The basic premise of this sound board is to create a 9 panel soundboard with sounds that can play from it
-// Other sounds off to the side can be dragged in per the user's preference or need
-// The replaced sound will snap into the new sounds old place in the 'container' off to the side
-
-// Stretch goals
-// Light and dark theme just for fun (loads user's system preference first)
-
-// Pseudo code
-// Create a json file that holds ALL possible sounds with MP3 or MP4 file
-// Import json file into firebase
+import SparkleIcon from './components/SparkleIcon';
 
 // Global Variables
 const database = getDatabase(firebase)
@@ -76,6 +65,8 @@ function App() {
                 name='userSounds'
                 value={userSounds}
               >
+                <SparkleIcon className="sparkle top" />
+                <SparkleIcon className="sparkle bottom" />
               </SoundContainer>
             )}
             <Link className='button' to='/view' type='submit'>Create Soundboard!</Link>
@@ -85,6 +76,8 @@ function App() {
           <>
             {!userSounds ? null : (
               <SoundBoard sounds={userSounds}>
+                  <SparkleIcon className="sparkle top" />
+                  <SparkleIcon className="sparkle bottom" />
               </SoundBoard>
             )}
             <Link className='button' to='/'>Go back</Link>
