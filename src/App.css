@@ -1,6 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+
+/* 'Hellowin' fonts from FFonts: https://www.ffonts.net */
 @font-face {
-    font-family: 'giveRegular';
-    src: url('GvTimeRegular-4B1zD.ttf');
+    font-family : 'Hellowin';
+    src : url('Hellowin.ttf');
+}
+
+@font-face {
+    font-family : 'Hellowin-italic';
+    src : url('Hellowin-Italic.otf');
 }
 
 html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit}b,strong{font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}button,html [type=button],[type=reset],[type=submit]{-webkit-appearance:button}button::-moz-focus-inner,[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner{border-style:none;padding:0}button:-moz-focusring,[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring{outline:1px dotted ButtonText}fieldset{padding:.35em .75em .625em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}template{display:none}[hidden]{display:none}
@@ -10,3 +18,138 @@ html{line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}bo
 .clearfix:after {visibility: hidden; display: block; font-size: 0; content: ''; clear: both; height: 0; }
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    background-color: #f5e9c2;
+    text-transform: lowercase;
+    /* Image by https://www.freepik.com/free-psd/70-s-aesthetic-youtube-cover-template_43156556.htm#query=70s%20aesthetic&position=5&from_view=keyword&track=ais */
+    background-image: url('/assets/daisy.png'), url('/assets/daisy.png');  
+    background-size: 300px, 250px;
+    background-repeat: no-repeat;
+    background-position: top calc(50% - 130px) left calc(50% - 370px), bottom calc(50% - 140px) right calc(50% - 355px);
+}
+  
+* {
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    font-family: 'Hellowin-Italic', sans-serif;
+}
+
+h1 {
+    color: #723B39;
+    font-size: 5.5rem;
+    margin: 1rem;
+    text-shadow: 3px 3px 0 #DE7E44, 6px 6px 0 #F2C91F, 9px 9px 0 #6f6dad;
+    text-align: center;
+    line-height: 1;
+
+}
+
+h1 span {
+    color: #723B39;
+    text-shadow: none;
+}
+
+p {
+    font-size: 1rem;
+    color: #723B39;
+}
+
+.soundBoard {
+    text-align: center;
+}
+
+form {
+    margin: 1.5rem 0;
+}
+
+.button {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-size: 1.5rem;
+    font-family: 'Hellowin';
+    text-transform: lowercase;
+    background-color: #6f6dad;
+    border-radius: 1.5rem;
+    padding: 25px 50px;
+    margin: 1.5rem;
+    line-height: 1;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+.button:hover {
+    background-color: #333A56;
+    text-shadow: 0 0 5px #fff;
+}
+
+.button:active {
+    background-color: #aab1d4;
+}
+
+.wrapper {
+    width: 720px;
+    margin: 0 auto;
+    position: relative;
+  }
+
+.keyboard fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-row-gap: 25px;
+    justify-items: center;
+    border: none;
+    background-color: #DE7E44;
+    border: none;
+    border-radius: 3rem;
+    padding: 3rem;
+  }
+
+.instructions {
+    text-align: center;
+    font-size: 1rem;
+    color: #723B39;
+}
+
+.sparkle {
+    position: absolute;
+    display: border-box;
+    height: 10rem;
+    width: 5rem;
+    z-index: 100;
+    fill: #fff;
+    animation: glint 1s ease-in infinite alternate;
+    pointer-events: none;
+    filter: drop-shadow(0 0 12px #fdd);
+}
+
+.sparkle.top {
+    top: -25px;
+    right: -38px;
+}
+
+.sparkle.bottom {
+    left: -38px;
+    bottom: -25px;
+    animation-direction: alternate-reverse;
+}
+
+@keyframes glint {
+    from {
+        padding: 0;
+    }
+    to {
+        padding: 1.25rem;
+    }
+}

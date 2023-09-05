@@ -3,7 +3,6 @@ import { createBrowserRouter, RouterProvider, Routes, Route, Link } from 'react-
 import firebase from './firebase';
 import { getDatabase, ref, child, onValue, set, push } from 'firebase/database'
 import Header from './components/Header'
-import SoundCube from './components/SoundCube';
 import SoundContainer from './components/SoundContainer';
 import './App.css'
 import SoundBoard from './components/SoundBoard';
@@ -41,17 +40,11 @@ function AppRouter() {
 function App() {
   const [count, setCount] = useState(0)
   const [userSounds, setUserSounds] = useState(null)
-  const navigate = useNavigate()
 
   useEffect(() => {
     const updateUserSounds = data => setUserSounds(data.val() || [])
     onValue(userSoundsRef, updateUserSounds)
   }, [])
-
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    navigate("/view")
-  }
 
   return <>
     <Header />
@@ -86,7 +79,6 @@ function App() {
       </Routes>
     </div>
   </>
-
 }
 
 const handleToggleSound = (selectedValues) => {

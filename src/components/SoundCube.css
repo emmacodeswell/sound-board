@@ -1,0 +1,62 @@
+.key {
+    text-align: center;
+    position: relative;
+}
+
+.key input  {
+    display: none;
+}
+
+.key .sound {
+    color: #723B39;
+    font-weight: 600;
+    line-height: 1;
+    width: 130px;
+    height: 130px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: #F2C91F 3px solid;
+    border-radius: 1.5rem;
+    transition: all .06s ease-out, background .2s ease-in-out;
+    cursor: pointer;
+    box-shadow: 5px 5px 0px 0px #bb5834, 10px 10px 0px 0px #723B39, 5px 5px 15px 5px rgba(0,0,0,0);
+    position: relative;
+    top: 0;
+    left: 0;
+}
+
+.key button.sound:active {
+    box-shadow: 1px 1px 0px 0px #bb5834, 2px 2px 0px 0px #723B39, 1px 1px 3px 1px rgba(0,0,0,0);
+    left: 8px;
+    top: 8px;
+}
+
+.key input:checked + .sound,
+.key button.sound {
+    background-color: #F2C91F;
+}
+
+.key .togglePlay {
+    appearance: none;
+    color: white;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    position: absolute;
+    bottom: -12px;
+    left: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 3rem;
+    height: 1em;
+    width: 1em;
+    margin: 0 auto;
+    transition: all .2s ease-in-out;
+}
+
+.key .togglePlay:hover,
+.key button.sound:hover .togglePlay {
+    filter: drop-shadow(0 0 5px #fff);
+}
