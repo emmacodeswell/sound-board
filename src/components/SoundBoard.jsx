@@ -12,7 +12,7 @@ const SoundBoard = ({sounds, children}) => {
                         { sounds.length ? (
                             sounds.map(soundName => <SoundCube name={soundName}/>)
                         ) : <>
-                            <h2>Why no sounds? :c</h2>
+                            <h2>Why no sounds? <span className="sadFace">☹</span></h2>
                         </>}
                     </fieldset>
                 </section>
