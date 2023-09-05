@@ -65,6 +65,7 @@ function App() {
   }
 
   return <>
+    <Header />
     <div className='soundBoard'> 
       <Routes>
         <Route path="/" element={
